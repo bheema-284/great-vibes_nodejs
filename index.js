@@ -9,8 +9,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const BookController = require('./src/Controllers/movie.controller');
+const MovieController = require('./src/Controllers/movie.controller');
 
-app.use('/movie', BookController);
+app.use('/movie', MovieController);
 
 module.exports = app;
