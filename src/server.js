@@ -1,12 +1,23 @@
-const app = require("../index");
+const express = require('express');
+const mongoose = require('mongoose');
+const connect = require('./Configs/db');
+const cors = require("cors")
+require("dotenv").config();
+const app = express();
+app.use(cors());
+app.use(express.json());
+const port = process.env.PORT | 8080
+const MovieController = require('./Controllers/movie.controller');
+app.use('/movie', MovieController);
 
-const connect = require("./Configs/db");
-
-app.listen(8080, async () => {
-  await connect();  
-  console.log("Listining to the  port 8080");
-});
-
+app.listen(port, async(req,res)=>{
+    try {
+        await connect()
+        console.log(`Listining to the  port ${port}`)
+    } catch (error) {
+        console.log(error.message);
+    }
+})
 
 // Backend assessment : 
 // Perform CRUD Operations(Allow users to add , update or delete movies from the database) in a MOVIE app using Node js  and MongoDB.
