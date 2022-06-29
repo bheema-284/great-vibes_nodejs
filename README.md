@@ -2,7 +2,7 @@
 
 MovieApp
 
-- Crud Controller implemented like post(add), get(view), patch(update), and delete.
+- Crud Controller implemented like post, get, patch, and delete.
 - Movie Schema added.
 - Users can use this End point to update and view the datas.
 - End point : https://mighty-harbor-32826.herokuapp.com/movie
